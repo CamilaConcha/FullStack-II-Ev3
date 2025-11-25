@@ -1,9 +1,9 @@
 # Tienda de Figuras Coleccionables
 
-Este proyecto corresponde a una tienda web de figuras coleccionables inspirada en el universo Wakfu y el contexto de negocio de Haode.cl.
+Este proyecto corresponde a una tienda web de figuras coleccionables para la asignatura de fullstack
 
 ## Estructura del proyecto
-- **index.html**: Página principal (Home)
+- **index.html**: Página principal 
 - **catalogo.html**: Catálogo de productos
 - **producto.html**: Detalle de producto
 - **carrito.html**: Carrito de compras
@@ -18,22 +18,3 @@ Este proyecto corresponde a una tienda web de figuras coleccionables inspirada e
   - `carrito.js`, `validaciones.js`, etc.
 - **/data/productos.json**: Listado simulado de productos
 - **/assets/img/**: Imágenes y logo
-
-## Cómo levantar el proyecto
-Simplemente abre `index.html` en tu navegador. No requiere servidor ni instalación adicional.
-
-## Estilos y Bootstrap
-- Bootstrap se usa solo para grid y utilidades.
-- Los estilos visuales predeterminados de Bootstrap están anulados en `assets/css/style.css`.
-- Las clases visuales personalizadas (ej: `.btn--primary`, `.input--styled`) controlan la apariencia.
-
-## Dependencias
-- `style.css` depende de Bootstrap y define la paleta visual y overrides.
-- Cada vista tiene su propio archivo CSS y JS según corresponda.
-
-## Accesibilidad
-- Imágenes con atributo `alt`.
-- Formularios con etiquetas `label`.
-- Contraste adecuado entre texto y fondo.
-
----
