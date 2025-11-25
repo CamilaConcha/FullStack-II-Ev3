@@ -1,0 +1,96 @@
+/* carrito.css
+   Estilos específicos para la vista de carrito de compras.
+   Dependencias: style.css, bootstrap-overrides.css
+*/
+
+/* carrito.css - Layout profesional para la tienda */
+.carrito-title {
+  color: var(--color-primario);
+  margin: 32px 0 24px 0;
+  font-size: 2.2rem;
+  text-align: left;
+  font-weight: 700;
+}
+#carrito-list {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.carrito-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid #eee;
+  padding: 18px 0;
+}
+.carrito-item:last-child {
+  border-bottom: none;
+}
+.carrito-img {
+  width: 80px;
+  height: 60px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+.carrito-nombre {
+  color: var(--color-primario);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.carrito-precio {
+  color: var(--color-acento);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.carrito-cantidad {
+  width: 60px;
+  margin-right: 8px;
+}
+.carrito-eliminar {
+  color: var(--color-danger);
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 8px;
+}
+#carrito-resumen {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  color: var(--color-texto);
+  font-size: 1.1rem;
+}
+#carrito-actions .btn {
+  min-width: 180px;
+  font-size: 1.1rem;
+}
+#carrito-checkout {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  color: var(--color-texto);
+  font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+  .carrito-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  #carrito-list, #carrito-resumen, #carrito-checkout {
+    padding: 12px 6px;
+  }
+  .carrito-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  #carrito-actions .btn {
+    min-width: 100px;
+    font-size: 1rem;
+  }
+}
+/* Dependencias: style.css, bootstrap-overrides.css */
+/* Comentario: Este archivo contiene los estilos específicos para la vista de carrito. Depende de style.css y bootstrap-overrides.css. */

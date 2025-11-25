@@ -1,0 +1,93 @@
+/* admin.css - Estilos para el panel de administración */
+#tabla-productos {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+#tabla-productos th {
+  background: var(--color-acento);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  font-size: 1.08rem;
+}
+#tabla-productos td {
+  font-size: 1.05rem;
+  color: #222;
+  border: none;
+}
+#tabla-productos img {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+}
+#btn-agregar-producto {
+  background: linear-gradient(90deg, var(--color-acento) 0%, var(--color-secundario) 100%);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  min-width: 180px;
+  transition: background 0.2s, color 0.2s;
+}
+#btn-agregar-producto:hover {
+  background: linear-gradient(90deg, var(--color-secundario) 0%, var(--color-acento) 100%);
+  color: var(--color-primario);
+}
+.modal-content {
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  border: none;
+}
+.modal-header {
+  border-bottom: 1.5px solid var(--color-acento);
+}
+.modal-footer {
+  border-top: 1.5px solid var(--color-acento);
+}
+.modal .form-label {
+  font-weight: 700;
+  color: var(--color-acento);
+  font-size: 1.08rem;
+}
+.modal .form-control {
+  font-size: 1.08rem;
+  border-radius: 8px;
+  background: var(--color-muted);
+  color: var(--color-texto);
+  border: 1.5px solid var(--color-acento);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.modal-footer .btn {
+  min-width: 120px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+#tabla-productos img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+#tabla-productos th, #tabla-productos td {
+  vertical-align: middle;
+}
+#tabla-productos td {
+  font-size: 1rem;
+}
+#btn-agregar-producto {
+  min-width: 180px;
+}
+.modal .form-label {
+  font-weight: 600;
+}
+.modal .form-control {
+  font-size: 1rem;
+}
+.modal-footer .btn {
+  min-width: 120px;
+}

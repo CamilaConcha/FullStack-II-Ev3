@@ -1,0 +1,80 @@
+/* home.css - Estilos específicos para la vista Home */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  background: linear-gradient(90deg, #2e2e4d 60%, #f7c873 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-texto);
+  text-align: center;
+  background: rgba(46,46,77,0.7);
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+.section-title {
+  color: var(--color-secundario);
+  margin-bottom: 24px;
+  font-size: 2rem;
+  text-align: center;
+}
+.destacados {
+  margin-bottom: 48px;
+}
+#destacados-list .card {
+  background: #232347;
+  border: 1px solid var(--color-secundario);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+#destacados-list .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: var(--color-acento);
+}
+#destacados-list .card-img-top {
+  height: 180px;
+  object-fit: contain;
+  background: #181825;
+}
+#destacados-list .card-title {
+  color: var(--color-secundario);
+  font-size: 1.2rem;
+}
+#destacados-list .card-text {
+  color: var(--color-texto);
+}
+.btn--primary {
+  margin-top: 8px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 180px;
+  }
+  .banner-text {
+    padding: 12px 8px;
+    font-size: 1rem;
+  }
+  #destacados-list .card-img-top {
+    height: 120px;
+  }
+}
+/* Comentario: Este archivo contiene los estilos específicos para la página principal (Home). Depende de style.css para la paleta y overrides. */

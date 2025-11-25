@@ -1,0 +1,39 @@
+package com.usagi.mobile.data
+
+import com.usagi.mobile.model.FavoriteGenre
+import com.usagi.mobile.model.User
+
+sealed class AuthResult {
+    data class Success(val user: User) : AuthResult()
+    data class Failure(val message: String) : AuthResult()
+}
+
+class AuthRepository {
+    private val usersByEmail = mutableMapOf<String, User>()
+
+    fun isEmailTaken(email: String): Boolean = usersByEmail.containsKey(email)
+
+    fun register(
+        fullName: String,
+        email: String,
+        password: String,
+        phone: String?,
+        favoriteGenre: FavoriteGenre
+    ): AuthResult {
+        if (isEmailTaken(email)) {
+            return AuthResult.Failure("El correo ya está registrado.")
+        }
+        val user = User(fullName, email, password, phone, favoriteGenre)
+        usersByEmail[email] = user
+        return AuthResult.Success(user)
+    }
+
+    fun login(email: String, password: String): AuthResult {
+        val user = usersByEmail[email]
+        return when {
+            user == null -> AuthResult.Failure("Correo no registrado.")
+            user.password != password -> AuthResult.Failure("Contraseña incorrecta.")
+            else -> AuthResult.Success(user)
+        }
+    }
+}

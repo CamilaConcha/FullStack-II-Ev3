@@ -1,0 +1,48 @@
+/* bootstrap-overrides.css
+   Anula estilos visuales predeterminados de Bootstrap para la tienda.
+   Dependencias: style.css
+*/
+
+/* Botones Bootstrap */
+.btn-primary, .btn-secondary, .btn-success, .btn-danger, .btn-warning, .btn-info, .btn-light, .btn-dark {
+  background: var(--color-acento) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.btn-primary:hover, .btn-secondary:hover, .btn-success:hover, .btn-danger:hover, .btn-warning:hover, .btn-info:hover, .btn-light:hover, .btn-dark:hover {
+  background: var(--color-secundario) !important;
+  color: var(--color-primario) !important;
+}
+
+/* Inputs y selects Bootstrap */
+.form-control, .form-select {
+  background: var(--color-muted) !important;
+  color: var(--color-texto) !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  font-size: 1rem;
+  padding: 8px 12px;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-acento) !important;
+  box-shadow: 0 0 0 2px var(--color-acento) !important;
+}
+
+/* Tarjetas Bootstrap */
+.card {
+  background: #fff !important;
+  border: 1px solid #eee !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+}
+.card-title {
+  color: var(--color-primario) !important;
+}
+.card-text {
+  color: var(--color-texto) !important;
+}
+/* Comentario: Este archivo anula los estilos visuales predeterminados de Bootstrap. Depende de style.css para la paleta. */

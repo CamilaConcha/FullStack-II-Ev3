@@ -1,0 +1,413 @@
+/* tweaks.css - Overrides visuales finos para estilo
+   Objetivo: afinar botones, sombras, tipografía y animaciones sin tocar lógica.
+   Dependencias: index.css, style.css, animations.css */
+
+/* Paleta tierra con acentos verdes y dorados */
+:root {
+  --color-primario: #2e2a25; /* texto principal */
+  --color-secundario: #9700bd; /* acentos y detalles (hex válido) */
+  --color-acento: #c78ed6;     /* acciones principales */
+  --color-bg: #ffffff;         /* para fondo */
+  --color-texto: #2e2a25;      /* texto base */
+  --color-muted: #f2ead7;      /* bloques y campos suaves */
+  --color-danger: #d9534f;     /* rojo de alerta para botones/avisos */
+}
+
+/* Tipografía global y títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primario);
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 0 rgba(255, 0, 191, 0.199);
+}
+
+/* Botones: forma de píldora, sombras cálidas y respuesta táctil */
+.btn,
+.btn--primary,
+.btn-success,
+.btn-danger,
+.btn-secondary {
+  background: linear-gradient(180deg, var(--color-acento) 0%, var(--color-acento) 40%, var(--color-secundario) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 12px 28px;
+  box-shadow: 0 6px 18px rgba(46, 46, 37, 0.308), 0 1px 0 rgba(255,255,255,0.4) inset;
+  letter-spacing: 0.4px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn:hover,
+.btn:focus,
+.btn--primary:hover,
+.btn--primary:focus,
+.btn-success:hover,
+.btn-danger:hover,
+.btn-secondary:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(46, 42, 37, 0.25), 0 1px 0 rgba(255,255,255,0.5) inset;
+}
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(46, 42, 37, 0.22) inset;
+}
+.btn-success {
+  background: linear-gradient(180deg, #7abf5a 0%, #5f9947 100%);
+  border: 1px solid #4e7f39;
+}
+.btn-outline-secondary {
+  color: var(--color-primario);
+  background: transparent;
+  border: 1.5px solid rgba(156, 127, 63, 0.5);
+}
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  background: rgba(156, 127, 63, 0.12);
+}
+
+/* Tarjetas: sombras cálidas y elevación tenue */
+.card,
+.card-main {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(34, 21, 10, 0.10);
+  border: 1px solid rgba(60, 40, 20, 0.12);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover,
+.card-main:hover {
+  box-shadow: 0 16px 44px rgba(34, 21, 10, 0.16);
+  transform: translateY(-2px) scale(1.015);
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(180deg, var(--color-muted) 0%, #ffffff 100%) !important;
+  box-shadow: 0 2px 12px rgba(34, 21, 10, 0.08);
+  border-bottom: 1px solid rgba(60, 40, 20, 0.12);
+}
+
+/* Hero banner bajo el navbar */
+.hero-banner {
+  position: relative;
+  background: url('../img/banner.jpg') center/cover no-repeat;
+  min-height: 360px; /* altura ligeramente menor (ajustada) */
+  background-position: 50% 56%;
+  will-change: background-position;
+  animation: bannerDriftContinuous 34s linear infinite alternate;
+}
+.hero-banner::before {
+  /* velo suave para mejorar legibilidad del texto */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.4) 100%);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-title { font-weight: 800; }
+.hero-subtitle {
+  color: rgba(46, 42, 37, 0.95); /* mayor contraste para legibilidad */
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.85);
+  display: inline-block;
+  background: rgba(255,255,255,0.32); /* velo suave tras el texto */
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+/* Conejo flotando en eje Y */
+.floating-logo {
+  max-width: 340px; /* ligeramente más grande en desktop */
+  width: 100%;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.15));
+  animation: floatY 3.2s ease-in-out infinite;
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+/* Movimiento más suave del fondo en cuatro diagonales */
+/* Movimiento continuo y lento de arriba a abajo (sin pausas) */
+@keyframes bannerDriftContinuous {
+  from { background-position: 48% 52%; }  /* arriba-izquierda suave */
+  to   { background-position: 52% 75%; }  /* abajo-derecha más abajo (75%) */
+}
+@media (max-width: 768px) {
+  .floating-logo { max-width: 220px; } /* un poco más grande en móvil */
+  .hero-banner { min-height: 320px; }
+}
+
+/* Aumentar tamaño del logo flotante en escritorio */
+@media (min-width: 992px) {
+  .floating-logo { max-width: 420px; }
+}
+
+/* Altura mayor del banner solo en escritorio */
+@media (min-width: 992px) {
+  .hero-banner { min-height: 480px; }
+}
+@media (min-width: 1200px) {
+  .hero-banner { min-height: 540px; }
+}
+
+/* Título secciones */
+.section-title-main {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-primario);
+  margin-bottom: 18px;
+  letter-spacing: 0.6px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Página de autenticación: fondo suave y centrado vertical */
+.auth-page {
+  min-height: 60vh;
+  background: linear-gradient(180deg, rgba(242, 234, 215, 0.8), rgba(242, 234, 215, 0.95));
+  border-radius: 24px;
+}
+
+/* Recuadro visual para total del carrito */
+.cart-total-box {
+  background: rgba(242, 234, 215, 0.8);
+  border: 1px solid rgba(156, 127, 63, 0.45);
+  color: var(--color-primario);
+  padding: 10px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(34, 21, 10, 0.08);
+}
+
+/* Shell flex para mantener el footer al pie */
+.app-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.app-main { flex: 1 0 auto; }
+
+/* Ajuste de tamaño del Footer en todas las páginas */
+.footer-main { padding: 24px 8vw 12px 8vw; }
+.footer-bottom { padding: 10px 8vw; font-size: 0.95rem; }
+
+@media (max-width: 900px) {
+  .footer-main { padding: 20px 4vw 10px 4vw; }
+  .footer-bottom { padding: 8px 4vw; }
+}
+
+/* Footer pastel: cuerpo ligeramente más oscuro y barra inferior más negra */
+.footer {
+  /* Paleta pastel para el área principal del footer */
+  --footer-bg-start: #380732bd;   /* rosa pastel un poco más oscuro */
+  --footer-bg-end:   #ad718f;   /* rosa pastel medio más profundo */
+  --footer-text:     #fff8f8;   /* texto muy claro */
+  --footer-link:     #ffe3ee;   /* enlaces claros por defecto */
+  --footer-link-hover:#ffffff;  /* enlaces totalmente blancos al hover */
+  --footer-bottom-bg:#000000;   /* barra inferior casi negra */
+  --footer-bottom-text:#f4e9ef; /* texto inferior ligeramente rosado */
+
+  background: linear-gradient(180deg, var(--footer-bg-start) 0%, var(--footer-bg-end) 100%) !important;
+  color: var(--footer-text);
+}
+.footer-section h5 { color: var(--footer-text); }
+.footer-section ul li a {
+  color: var(--footer-link);
+  text-decoration: none;
+}
+.footer-section ul li a:hover,
+.footer-section ul li a:focus {
+  color: var(--footer-link-hover);
+  text-decoration: underline;
+}
+.footer a:focus-visible {
+  outline: 2px solid #ffd3e6;
+  outline-offset: 2px;
+}
+.footer-bottom {
+  background: var(--footer-bottom-bg);
+  color: var(--footer-bottom-text);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Iconos de redes en el footer: tamaño pequeño y espaciado */
+.footer-social { display: inline-flex; gap: 12px; }
+.footer-social a { display: inline-flex; align-items: center; }
+.footer-social img { height: 20px; width: 20px; opacity: 0.95; transition: transform 0.15s ease, opacity 0.2s ease; }
+.footer-social a:hover img, .footer-social a:focus img { opacity: 1; transform: scale(1.06); }
+
+/* Logo del footer más pequeño */
+.footer-logo {
+  height: 32px;
+  width: auto;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,0.2));
+}
+
+/* Orden horizontal del footer (izq → der) y evitar apilado vertical */
+.footer-main {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.footer-section {
+  flex: 0 0 auto;
+  min-width: 200px;
+}
+
+/* Preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card,
+  .navbar,
+.producto-card,
+  .floating-logo,
+  .hero-banner {
+  transition: none !important;
+  animation: none !important;
+}
+}
+
+/* Utilidad: botón rosa tipo píldora, reutilizable en toda la app */
+.btn-pink-pill {
+  background: linear-gradient(180deg, var(--color-acento) 0%, var(--color-acento) 50%, var(--color-secundario) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  box-shadow: 0 6px 18px rgba(46, 46, 37, 0.22);
+}
+.btn-pink-pill:hover, .btn-pink-pill:focus {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(46, 42, 37, 0.28);
+}
+.btn-pink-pill:active {
+  transform: translateY(1px);
+}
+
+/* Estado rojo para acciones peligrosas: Eliminar */
+/* Mayor especificidad para imponerse a overrides de Bootstrap */
+button.btn.btn-danger:hover,
+button.btn.btn-danger:focus,
+button.btn.btn-danger:active,
+button.btn.btn-danger:focus-visible,
+.btn.btn-danger:hover,
+.btn.btn-danger:focus,
+.btn.btn-danger:active,
+.btn.btn-danger:focus-visible {
+  background: linear-gradient(180deg, var(--color-danger) 0%, #a6261f 100%) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 10px 24px rgba(217, 83, 79, 0.35) !important;
+  filter: none !important;
+}
+
+/* Mantener botón de compra en estilo verde y forma pill */
+.btn-success {
+  border-radius: 999px;
+}
+
+/* Controles de cantidad: evitar salto vertical y mantener responsivo */
+.qty-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+.qty-btn {
+  min-width: 40px;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.qty-input {
+  width: 64px;
+  min-width: 48px;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .qty-btn { min-width: 34px; padding: 6px 10px; }
+  .qty-input { width: 52px; }
+}
+
+/* Barra superior rosa pastel para headers de tarjetas */
+.bg-pastel-pink {
+  background: linear-gradient(180deg, #ffd1e8 0%, #f7acd7 100%);
+}
+
+/* === Featured products: cards e imágenes uniformes y responsivas === */
+.featured-products .row > [class^="col"] { display: flex; }
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px; /* uniformidad en desktop */
+  border-radius: 16px;
+}
+.featured-card .card-body { display: flex; flex-direction: column; }
+.featured-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* tamaño consistente para imágenes */
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+.featured-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.featured-card .btn { align-self: flex-start; }
+
+@media (max-width: 768px) {
+  .featured-card { min-height: auto; }
+  .featured-img { aspect-ratio: 3 / 2; }
+}
+
+/* === Catálogo: cards más compactas y uniformes === */
+.catalog-grid > [class^="col"] { display: flex; }
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px; /* más compacto que destacados */
+  border-radius: 16px;
+}
+.catalog-card .card-body { display: flex; flex-direction: column; }
+.catalog-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* cuadrado para catálogo */
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+.catalog-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.catalog-card .card-title { font-weight: 700; }
+.catalog-card .card-title { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.catalog-card .card-text { color: #6b6b6b; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.catalog-card .btn { align-self: flex-start; }
+
+@media (max-width: 768px) {
+  .catalog-card { min-height: auto; }
+  .catalog-img { aspect-ratio: 3 / 2; }
+}
+
+/* Altos fijos en desktop para uniformidad total de imágenes del catálogo */
+@media (min-width: 768px) {
+  .catalog-img { aspect-ratio: auto; height: 220px; }
+}
+@media (min-width: 992px) {
+  .catalog-img { height: 260px; }
+}
+
+/* Contenedor de acciones del catálogo: botones separados y del mismo ancho */
+.catalog-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.catalog-actions { margin-top: auto; }
+.catalog-actions .btn { width: 100%; padding: 10px 20px; font-size: 0.95rem; }
+@media (max-width: 576px) {
+  .catalog-actions { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,87 @@
+/* producto.css
+   Estilos específicos para la vista de detalle de producto.
+   Dependencias: style.css, bootstrap-overrides.css
+*/
+
+/* producto.css - Detalle profesional para la tienda */
+#producto-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+}
+.producto-galeria {
+  flex: 1 1 320px;
+  max-width: 420px;
+  min-width: 260px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.placeholder-img {
+  width: 80%;
+  aspect-ratio: 4/3;
+  background: #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.producto-info {
+  flex: 2 1 400px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  color: var(--color-texto);
+}
+.producto-nombre {
+  color: var(--color-primario);
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.producto-descripcion {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+.producto-especificaciones {
+  font-size: 0.98rem;
+  margin-bottom: 18px;
+}
+.producto-precio {
+  font-size: 1.3rem;
+  color: var(--color-acento);
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.producto-stock {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.producto-cantidad {
+  width: 80px;
+  margin-right: 12px;
+}
+.btn--primary {
+  font-size: 1.1rem;
+  padding: 12px 0;
+  width: 100%;
+  margin-top: 18px;
+}
+@media (max-width: 900px) {
+  #producto-detalle {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .producto-galeria, .producto-info {
+    max-width: 100%;
+    padding: 18px 8px;
+  }
+}
+/* Dependencias: style.css, bootstrap-overrides.css */
+/* Comentario: Este archivo contiene los estilos específicos para la vista de detalle de producto. Depende de style.css y bootstrap-overrides.css. */

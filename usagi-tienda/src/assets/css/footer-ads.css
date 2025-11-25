@@ -1,0 +1,47 @@
+/* === FOOTER PROFESIONAL tipo AdsClick === */
+.footer-ads {
+  background: #23272b;
+  color: #f8f9fa;
+  font-size: 1rem;
+  margin-top: 48px;
+}
+.footer-ads a.footer-link {
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-ads a.footer-link:hover {
+  color: #ffb300;
+  text-decoration: underline;
+}
+.footer-ads h5 {
+  color: #ffb300;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.footer-ads ul {
+  padding-left: 0;
+  list-style: none;
+}
+.footer-ads .footer-icon {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+.footer-ads hr {
+  border-color: #fff;
+  opacity: 0.15;
+}
+.footer-ads img {
+  vertical-align: middle;
+}
+@media (max-width: 767px) {
+  .footer-ads .row > div {
+    margin-bottom: 1.5rem;
+  }
+  .footer-ads .d-flex.flex-md-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+}
+/* === FIN FOOTER PROFESIONAL === */

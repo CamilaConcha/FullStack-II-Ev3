@@ -1,0 +1,98 @@
+/* catalogo.css
+   Estilos específicos para la vista de catálogo de productos.
+   Dependencias: style.css, bootstrap-overrides.css
+*/
+
+/* catalogo.css - Grid profesional para la tienda */
+.catalogo-title {
+  color: var(--color-primario);
+  margin: 32px 0 24px 0;
+  font-size: 2.2rem;
+  text-align: left;
+  font-weight: 700;
+}
+.filtros {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.filtros-title {
+  color: var(--color-acento);
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+.filtros-section label {
+  color: var(--color-primario);
+  font-weight: 500;
+}
+.card--product {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 10px;
+}
+.card--product:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: var(--color-acento);
+}
+.card--product .card-img-top {
+  width: 100%;
+  height: 160px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 8px 0 0;
+}
+.card--product .placeholder-img {
+  width: 80%;
+  height: 120px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+.card--product .card-title {
+  color: var(--color-primario);
+  font-size: 1.1rem;
+  margin-top: 12px;
+  font-weight: 700;
+}
+.card--product .card-text {
+  color: var(--color-texto);
+  font-size: 0.98rem;
+}
+.card--product .badge {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+.btn--primary {
+  margin-top: auto;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .catalogo-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .filtros {
+    padding: 12px 6px;
+  }
+  .card--product {
+    min-height: 260px;
+  }
+  .card--product .card-img-top {
+    height: 90px;
+  }
+  .card--product .placeholder-img {
+    height: 60px;
+  }
+}
+/* Dependencias: style.css, bootstrap-overrides.css */
+/* Comentario: Este archivo contiene los estilos específicos para la vista de catálogo. Depende de style.css y bootstrap-overrides.css. */
