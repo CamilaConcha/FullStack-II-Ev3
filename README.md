@@ -1,6 +1,8 @@
 # Tienda de Figuras Coleccionables
 
-https://usagi-vite-react.web.app/
+link de la tienda: https://usagi-vite-react.web.app/
+
+video de muestra:  https://youtu.be/EMiKzovATRo?si=ioIGNfpkmscbd14h
 
 Este proyecto corresponde a una tienda web de figuras coleccionables para la asignatura de fullstack II
 
